@@ -19,19 +19,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        print(leftDiceNumber);
-        print(rightDiceNumber);
-        
-        diceImageView1.image = dices[leftDiceNumber];
-        diceImageView2.image = dices[rightDiceNumber];
-        
-        leftDiceNumber = (leftDiceNumber + 1) % 6;
-        rightDiceNumber = abs((rightDiceNumber - 1) % 6);
+        diceImageView1.image = dices[Int.random(in: 0...5)];
+        diceImageView2.image = dices[Int.random(in: 0...5)];
     }
 }
 
